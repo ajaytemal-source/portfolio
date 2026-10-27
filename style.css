@@ -1,14 +1,52 @@
 html {
-  background-color: #4D5D53;
+  min-height: 100vh;
+  background-color: #1F305E;
 }
 
 body {
+  position: relative;
+  z-index: 1;
   width: 85%;
   max-width: 600px;
   margin: 80px auto;
   padding: 24px 48px;
   color: #fff4dd;
   font-family: "Brawler", serif;
+}
+
+.ascii-gutter {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: calc((100% - min(600px, 85%)) / 2 - 12px);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+  color: #fff4dd;
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: pre;
+  opacity: 0.72;
+  pointer-events: none;
+  user-select: none;
+}
+
+#ascii-left {
+  left: 0;
+}
+
+#ascii-right {
+  right: 0;
+}
+
+@media (max-width: 900px) {
+  .ascii-gutter {
+    display: none;
+  }
 }
 
 a {
